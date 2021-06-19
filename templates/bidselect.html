@@ -1,0 +1,35 @@
+{% extends "web.html" %}
+
+{% block content %}
+<div class="container">
+    <table class="table table-hover">
+        {% for item in project %}<tr>
+            {% for i in item %}
+            {%if loop.index !=6 %}
+        <td>{{i}}</td>
+        {% else %}<td>
+                {% for k in i %}
+                {{k}}&nbsp;,
+                {% endfor %}</td>
+         {% endif %}
+        {% endfor%}</tr>
+        {% endfor %}
+    </table>
+    <div style="
+        margin: auto;
+        width: 60%;
+        border: 3px solid royalblue;
+        padding: 10px;">
+    <form action="{{url_for('selectedbid')}}" method="POST" class="form-group">
+        
+        Project id: <input type="text" name="id"><br><br>
+         
+         Paste address here <input type="text" name="key"><br><br>
+         Enter bidder number <input type="text" name="number"><br><br>
+         <input type="submit" value="Submit" class="btn btn-success">
+ 
+     </form>  
+     </div>
+
+</div>
+{% endblock %}    

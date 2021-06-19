@@ -1,0 +1,40 @@
+{% extends "web.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center"><span class="badge badge-pill badge-dark" style="font-size: 20px;">Pay For Projects Here</span></div> 
+    
+    
+
+    <table class="table table-bodered">
+        {% for item in project %}<tr>
+            {% for i in item %}
+            {%if loop.index !=6 %}
+        <td>{{i}}</td>
+        {% else %}<td>
+                {% for k in i %}
+                {{k}}&nbsp;,
+                {% endfor %}</td>
+         {% endif %}
+        {% endfor%}</tr>
+        {% endfor %}
+    </table>
+    <div style="
+    margin: auto;
+    margin-top: 15px;
+    width: 60%;
+    border: 3px solid black;
+    padding: 10px;">
+    <form action="{{url_for('pay')}}" method="POST">
+        
+        Project id: <input type="text" name="id"><br><br>
+         Amount you want to pay <input type="text" name="amount"><br><br>
+         Paste address here <input type="text" name="key"><br><br>
+         Paste your key here <input type="password" name="private_key"><br><br>
+         <input type="submit" value="Submit" class="btn btn-success">
+ 
+     </form>  
+     </div>
+
+</div>
+{% endblock %}    

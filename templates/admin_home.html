@@ -1,0 +1,40 @@
+{% extends "web.html" %}
+
+{% block content %}
+<div class="container">
+    <h2 style="margin-bottom: 0;">
+        Upload Projects
+        <br>
+        <small class="text-muted">for new bid</small>
+      </h2>
+    
+    <div style="
+    margin: auto;
+    width: 70%;
+    margin-left: 17%;
+    padding: 10px;">
+   <a href={{ url_for('bid')}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true" >Projects to bid</a>
+   <a href={{ url_for('cprojects')}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Completed Projects</a>
+   <a href={{ url_for('bidselect')}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Select Bidder</a>
+   <a href={{ url_for('people')}} class="btn btn-primary btn-lg active" role="button" aria-pressed="true">People account</a>
+    </div>
+    <div style="
+        margin: auto;
+        width: 60%;
+        border: 3px solid black;
+        padding: 10px;">
+    <form action="{{url_for('upload_project')}}" method="POST" enctype="multipart/form-data">
+        Key: <input type="text" name="key"><br><br>
+       Place: <input type="text" name="place" ><br><br>
+       description: <input type="text" name="description" ><br><br>
+        Upload Image <input type="file" name="image" ><br><br>
+        Amount: <input type="text" name="amount" ><br><br>
+        <input type="submit" value="Submit" type="button" class="btn btn-outline-primary">
+       <!-- create_project(string memory place,string memory description,
+    string memory image_address,int amount)  -->
+
+    </form>
+    </div>
+
+</div>
+{% endblock %}    

@@ -1,0 +1,24 @@
+{% extends "web.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="text-center" ><span class="badge badge-pill badge-dark" style="font-size: 20px;">Register Here</span></div> 
+    <div style="
+    margin: auto;
+    width: 60%;
+    margin-top: 15px;
+    border: 3px solid black;
+    padding: 10px;">   
+<form action=" {{url_for('register')}}">
+    Key: <input type="text" name="Key"><br><br>
+    Adhaar: <input type="text" name="IPFS"><br><br>
+    Username: <input type="text" name="Username"><br><br>
+    Password: <input type="text" name="Password"><br><br>
+    Email: <input type="text" name="email"><br><br>
+    <input type="submit" value="Submit" class="btn btn-success">
+
+
+</form>
+</div>
+</div>
+{% endblock %}    

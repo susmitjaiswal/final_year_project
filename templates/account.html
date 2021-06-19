@@ -1,0 +1,16 @@
+{% extends "web.html" %}
+
+{% block content %}
+<div class="container">
+    <span class="badge badge-pill badge-primary">List of account and their money left</span>
+    <table  class="table table-bordered table-hover" style="border: blue;">
+        {% for item in list %}
+        <tr>{% for i in item %}
+                <td>{{i}}</td>
+        {%endfor %}</tr>
+        {% endfor %}
+
+    </table>
+
+</div>
+{% endblock %}    

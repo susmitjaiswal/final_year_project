@@ -1,0 +1,20 @@
+{% extends "web.html" %}
+
+{% block content %}
+<div class="container" style="padding-top: 10px;">
+    <table  class="table table-striped">
+        {% for item in project %}<tr>
+            {% for i in item %}
+            {%if loop.index !=6 %}
+        <td>{{i}}</td>
+        {% else %}<td>
+                {% for k in i %}
+                {{k}}&nbsp;,
+                {% endfor %}</td>
+         {% endif %}
+        {% endfor%}</tr>
+        {% endfor %}
+    </table>
+
+</div>
+{% endblock %}    

@@ -1,0 +1,31 @@
+{% extends "web.html" %}
+
+{% block content %}
+{% if flag==False %}
+    <p>Invalid Username and Password</p>
+   {% endif %}
+   
+  <div class="container">
+  <div class="text-center"><span class="badge badge-pill badge-dark" style="font-size: 20px;">Login Here</span></div> 
+    
+    <div style="
+    margin: auto;
+    margin-top: 15px;
+    width: 60%;
+    border: 3px solid black;
+    padding: 10px;">
+
+    <form action="{{ url_for('thank_you') }}" >
+        Key: <input type="text" name="Key"><br><br>
+        Username: <input type="text" name="Username" ><br><br>
+        Passsword: <input type="password" name="Password" ><br><br>
+       
+        <input type="radio" name="options" id="1" value="User"> User </input><br>
+        <input type="radio" name="options" id="2" value="Admin"> Admin </input><br>
+       
+        <input type="submit" value="Submit" class="btn btn-success">
+    </form>
+    </div>
+    
+  </div>
+{% endblock %}    
